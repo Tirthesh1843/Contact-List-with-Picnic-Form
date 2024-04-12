@@ -1,9 +1,8 @@
 <?php
-if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']== true){
-  $loggedin= true;
-}
-else{
-  $loggedin=false;
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  $loggedin = true;
+} else {
+  $loggedin = false;
 }
 include 'partials/_dbconnect.php';
 echo '
@@ -23,64 +22,64 @@ img {
         <li class="nav-item active">
           <a class="nav-link" href="index.php">Home<span class="sr-only"></span></a>
         </li>';
-        if(!$loggedin){
-        echo'<li class="nav-item">
+if (!$loggedin) {
+  echo '<li class="nav-item">
           <a class="nav-link" href="login.php">Login</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="signup.php">Signup</a>
-        </li>'
-;}
-        if($loggedin){
-        echo'
+        </li>';
+}
+if ($loggedin) {
+  echo '
         <li class="nav-item">
         <a class="nav-link" href="contact_list.php">Contacts</a>
         </li>
         ';
-echo '</ul >
+  echo '</ul >
     </div>
   </div>';
-    $id = $_SESSION['user_id'];
-    $sql = "SELECT * FROM `trip`.`users` WHERE `id` = '$id' ";
-    $result = mysqli_query($conn, $sql);
-    if(mysqli_num_rows($result)> 0){
-        foreach($result as $row){
-          ?><span>
-          Hello,</span>
-          <?php
-          if($row['name'] == ""){
-            echo'<span>
+  $id = $_SESSION['user_id'];
+  $sql = "SELECT * FROM `trip`.`users` WHERE `id` = '$id' ";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    foreach ($result as $row) {
+?>
+      <span>
+        Hello,</span>
+      <?php
+      if ($row['name'] == "") {
+        echo '<span>
             User
             </span>';
-          }
-          else{?>
-          <span>
-            <?php echo $row ['name'];?>
-          </span>
-          <?php
-          }
-          if($row['profile_picture'] == ""){
-            ?>
-            <span class="navbar-text">
-          <a class="nav-link" href="profile.php" >
-            <img src ="images/def_pp.jpg" alt="Avatar" style="width:100px"/>
-          </a>  
+      } else { ?>
+        <span>
+          <?php echo $row['name']; ?>
         </span>
-          <?php }
-          else{
-            ?>
-          <span class="navbar-text">
-          <a class="nav-link" href="profile.php" >
-            <img src =   "<?php   echo $row ['profile_picture']; ?>"alt="Avatar" style="width:100px"/>
-          </a>  
+      <?php
+      }
+      if ($row['profile_picture'] == "") {
+      ?>
+        <span class="navbar-text">
+          <a class="nav-link" href="profile.php">
+            <img src="images/def_pp.jpg" alt="Avatar" style="width:100px" />
+          </a>
         </span>
-         <?php }
-          echo' 
+      <?php } else {
+      ?>
+        <span class="navbar-text">
+          <a class="nav-link" href="profile.php">
+            <img src="<?php echo $row['profile_picture']; ?>" alt="Avatar" style="width:100px" />
+          </a>
+        </span>
+<?php }
+      echo ' 
    <span class="navbar-text">
     <a class="nav-link" href="logout.php" > Logout</a>
-  </span>'
-;
-  }}}
-echo'
+  </span>';
+    }
+  }
+}
+echo '
 </nav>';
 ?>
