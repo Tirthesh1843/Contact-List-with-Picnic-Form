@@ -1,0 +1,107 @@
+body {
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#ffffff;
+    background-color:#ffffff;
+  }
+  
+  h1 {
+    color: #ffffff;
+  }
+  
+  h2 {
+    font-size:1em; 
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #ffffff;
+  }
+  
+  h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  
+  .container th h1 {
+        font-weight: bold;
+        font-size: 1em;
+    text-align: left;
+    color: #c1cacc;
+  }
+  
+  .container td {
+        font-weight: normal;
+        font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #020d4f;
+         -moz-box-shadow: 0 2px 2px -2px #020d4f;
+              box-shadow: 0 2px 2px -2px #020d4f;
+  }
+  
+  .container {
+        text-align: left;
+        overflow: hidden;
+        width: 80%;
+        margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+  }
+  
+  .container td, .container th {
+        padding-bottom: 2%;
+        padding-top: 2%;
+    padding-left:2%;  
+  }
+  
+  /* Background-color of the odd rows */
+  .container tr:nth-child(odd) {
+        background-color: #001fcd;
+  }
+  
+  /* Background-color of the even rows */
+  .container tr:nth-child(even) {
+        background-color: #001fcd;
+  }
+  
+  .container th {
+        background-color: #ffffff;
+  }
+  
+  .container td:first-child { color: #ffffff; }
+  
+  .container tr:hover {
+     background-color: #020d4f;
+  -webkit-box-shadow: 0 6px 6px -6px #001fcd;
+         -moz-box-shadow: 0 6px 6px -6px #001fcd;
+              box-shadow: 0 6px 6px -6px #001fcd;
+  }
+  
+  
+  
+  .btn{
+      color: #ffffff;
+      background: #001fcd;
+      padding: 5px px;
+      font-size: 20px;
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+  }
+  .button{
+    color: #001fcd;
+    
+  }
+.hi{
+    align-items:end;
+  }
+  
+  @media (max-width: 800px) {
+  .container td:nth-child(4),
+  .container th:nth-child(4) { display: none; }
+  }
